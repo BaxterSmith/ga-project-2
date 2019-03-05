@@ -8,7 +8,6 @@ const AlbumSchema = new Schema({
     length: String,
     numSongs: Number,
     releaseYear: Number,
-    members: String,
     reviews: [ReviewSchema]
 });
 
@@ -23,8 +22,7 @@ const ArtistSchema = new Schema({
 const ReviewSchema = new Schema({
     reviewer: String,
     reviewText: String,
-    rating: Number,
-    album: [AlbumSchema]
+    rating: Number
 });
 
 module.exports = mongoose.model('Album', AlbumSchema);
