@@ -1,1 +1,30 @@
-This is the form for updating an album
+<form action="/{{album.id}}?_method=PUT" method="POST">
+    <div>
+        <label for="artist">Artist</label>
+        <input type="text" name="artist" id="artist" value="{{album.artist}}">
+    </div>
+    <div>
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" value="{{album.title}}">
+    </div>
+    <div>
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" id="genre" value="{{album.genre}}">
+    </div>
+    <div>
+        <label for="length">Length (LP, EP, 7", etc)</label>
+        <input type="text" name="length" id="length" value="{{album.length}}">
+    </div>
+    <div>
+        <label for="numSongs">Number of Songs</label>
+        <input type="text" name="numSongs" id="numSongs" value="{{album.numSongs}}">
+    </div>
+    <div>
+        <label for="releaseYear">Year Released</label>
+        <input type="text" name="releaseYear" id="releaseYear" value="{{album.releaseYear}}">
+    </div>
+    <div>
+        <label for="imgLink">Image Link</label>
+        <input type="text" name="imgLink" id="imgLink" value="{{album.imgLink}}">
+    </div>
+</form>
