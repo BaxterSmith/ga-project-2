@@ -26,10 +26,12 @@ const albumController = {
         });
     },
     update: (req, res) => {
-
+        Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true}).then(() => {
+            res.redirect(`/${req.params.albumId}`);
+        })
     },
     delete: (req, res) => {
-
+        
     }
 };
 
