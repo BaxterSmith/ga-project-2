@@ -7,3 +7,5 @@ const ReviewSchema = new Schema({
     rating: Number,
     album: [AlbumSchema]
 });
+
+module.exports = mongoose.model('Review', ReviewSchema);
