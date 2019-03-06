@@ -37,7 +37,8 @@ const bermudaEp = new Album({
     genre: "AOR",
     length: "EP",
     numSongs: 5,
-    releaseYear: 1985
+    releaseYear: 1985,
+    imgLink: "https://i.imgur.com/S2e6IkG.jpg"
 });
 
 const sailAway = new Album({
@@ -46,7 +47,8 @@ const sailAway = new Album({
     genre: "soft rock/pop",
     length: "LP",
     numSongs: 12,
-    releaseYear: 1972
+    releaseYear: 1972,
+    imgLink: "https://i.imgur.com/zJL82tO.jpg"
 });
 
 const glassWeb = new Album({
@@ -55,7 +57,8 @@ const glassWeb = new Album({
     genre: "new wave",
     length: "LP",
     numSongs: 10,
-    releaseYear: 1988
+    releaseYear: 1988,
+    imgLink: "https://i.imgur.com/R6EewGl.jpg"
 });
 
 const urgesUrgent = new Album({
@@ -64,5 +67,44 @@ const urgesUrgent = new Album({
     genre: "new wave",
     length: "mini-album",
     numSongs: 6,
-    releaseYear: 1985
+    releaseYear: 1985,
+    imgLink: "https://i.imgur.com/bZ8WPAB.jpg"
 });
+
+const bermudaReview = new Review({
+    reviewer: "Baxter Smith",
+    rating: 5,
+    reviewText: "Excellent vocals and musicianship.",
+    album: [bermudaEp]
+});
+
+const sailAwayReview = new Review({
+    reviewer: "Mary Johnston",
+    rating: 4,
+    reviewText: "A pleasing, soothing album, though I do prefer Good Old Boys.",
+    album: [sailAway]
+});
+
+const glassWebReview = new Review({
+    reviewer: "Scott Doyle",
+    rating: 5,
+    reviewText: "Fantastic album from start to finish. Texas' answer to Duran Duran.",
+    album: [glassWeb]
+});
+
+const urgesUrgentReview = new Review({
+    reviewer: "Bob Carrara",
+    rating: 5,
+    reviewText: "This Philly-based band packs quite a punch.",
+    album: [urgesUrgent]
+});
+
+Album.remove({})
+  .then(() => Album.create([bermudaEp, sailAway, glassWeb, urgesUrgent]))
+  .then(() => {
+    Review.create([bermudaReview, sailAwayReview, glassWebReview, urgesUrgentReview])
+    console.log("seeded successfully");
+    mongoose.connection.close();
+  })
+  .catch(err => console.log(err, "error!"));
+
