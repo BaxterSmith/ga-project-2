@@ -1,5 +1,7 @@
 const mongoose = require('./connection.js');
+const Artist = require('../models/Artist.js');
 const Album = require('../models/Album.js');
+const Review = require('../models/Review.js');
 
 const bermuda = new Artist({
     name: "Bermuda",
@@ -30,7 +32,7 @@ const urge = new Artist({
 });
 
 const bermudaEp = new Album({
-    artist: "Bermuda",
+    artist: [bermuda],
     title: "Who Needs The Night",
     genre: "AOR",
     length: "EP",
@@ -39,7 +41,7 @@ const bermudaEp = new Album({
 });
 
 const sailAway = new Album({
-    artist: "Randy Newman",
+    artist: [randyNewman],
     title: "Sail Away",
     genre: "soft rock/pop",
     length: "LP",
@@ -48,7 +50,7 @@ const sailAway = new Album({
 });
 
 const glassWeb = new Album({
-    artist: "Secret Cinema",
+    artist: [secretCinema],
     title: "Glass Web",
     genre: "new wave",
     length: "LP",
@@ -57,10 +59,10 @@ const glassWeb = new Album({
 });
 
 const urgesUrgent = new Album({
-    artist: "The Urge",
+    artist: [urge],
     title: "Urges Get Urgent",
     genre: "new wave",
     length: "mini-album",
     numSongs: 6,
     releaseYear: 1985
-})
+});
