@@ -27,11 +27,13 @@ const albumController = {
     },
     update: (req, res) => {
         Album.findByIdAndUpdate(req.params.albumId, req.body, {new: true}).then(() => {
-            res.redirect(`/${req.params.albumId}`);
-        })
+            res.redirect(`/${req.params.albumId}`)
+        });
     },
     delete: (req, res) => {
-        
+        Album.findByIdAndDelete(req.params.albumId).then(() => {
+            res.redirect('/')
+        });
     }
 };
 
