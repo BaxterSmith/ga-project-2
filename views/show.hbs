@@ -1,1 +1,12 @@
-This is the page for showing an individual album
+<div class="container">
+    <h2></h2>
+    <div class="text-center">
+        <img src="{{album.imgLink}}" alt="album art">
+    </div>
+    <div class="text-center">
+        <a class="btn" href="/{{album.id}}/edit">Edit Album</a>
+        <form class="delete-form"action="/{{album.id}}?_method=DELETE" method="POST">
+           <input class="action-btn btn btn-danger" type="submit" value="Delete Album">
+       </form>
+    </div>
+</div>
