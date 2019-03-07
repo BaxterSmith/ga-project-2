@@ -1,0 +1,43 @@
+.container {
+    width: 100%;
+    background-color: #d32323;
+    height: 65px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+
+h1 {
+    color: #fff;
+}
+
+.review {
+    border: 1px solid #7e7e7e;
+    padding: 20px;
+}
+
+.review-img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.action-btn {
+    margin: 10px;
+}
+
+.delete-form {
+    display: inline-block;
+}
+
+.shop-img-banner {
+    border-radius: 4px;
+    height: 350px;
+    margin: 25px;
+}
+
+.star {
+    width: 25px;
+}
+
+.review-quote {
+    margin-top: 30px;
+}
