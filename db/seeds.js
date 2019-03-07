@@ -100,11 +100,12 @@ const urgesUrgentReview = new Review({
 });
 
 Album.remove({})
-  .then(() => Album.create([bermudaEp, sailAway, glassWeb, urgesUrgent]))
-  .then(() => {
-    Review.create([bermudaReview, sailAwayReview, glassWebReview, urgesUrgentReview])
-    console.log("seeded successfully");
-    mongoose.connection.close();
-  })
-  .catch(err => console.log(err, "error!"));
+    .then(() => Album.create([bermudaEp, sailAway, glassWeb, urgesUrgent]))
+    .then(() => Artist.create([bermuda, randyNewman, secretCinema, urge]))
+    .then(() => Review.create([bermudaReview, sailAwayReview, glassWebReview, urgesUrgentReview]))
+    .then(() => {
+        console.log("seeded successfully");
+        mongoose.connection.close();
+    })
+    .catch(err => console.log(err, "error!"));
 
