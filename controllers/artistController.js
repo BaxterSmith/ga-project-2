@@ -7,11 +7,11 @@ const artistController = {
         });
     },
     new: (req, res) => {
-        res.render('new');
+        res.render('/artists/new');
     },
     create: (req, res) => {
         Artist.create(req.body).then(artist => {
-            res.redirect('/')
+            res.redirect('/artists')
         });
     },
     show: (req, res) => {
@@ -22,7 +22,7 @@ const artistController = {
     },
     delete: (req, res) => {
         Artist.findByIdAndDelete(req.params.artistId).then(() => {
-            res.redirect('/')
+            res.redirect('/artists')
         });
     }
 };
