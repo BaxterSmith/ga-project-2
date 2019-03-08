@@ -5,8 +5,7 @@ const ArtistSchema = new Schema({
     name: String,
     origin: String,
     members: String,
-    numAlbums: Number,
-    albums: [AlbumSchema]
+    numAlbums: Number
 });
 
 module.exports = mongoose.model('Artist', ArtistSchema);
