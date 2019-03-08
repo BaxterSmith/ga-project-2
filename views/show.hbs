@@ -1,19 +1,24 @@
-<div class="container">
-    <h2></h2>
+ <h2></h2>
     <div class="text-center">
         <img src="{{album.imgLink}}" alt="album art">
     </div>
     <div class="text-center">
-        <a class="btn" href="/{{album.id}}/edit">Edit Album</a>
-        <form class="delete-form"action="/{{album.id}}?_method=DELETE" method="POST">
+        <a class="btn btn-primary" href="/{{_id}}/edit">Edit Album</a>
+        <form class="delete-form"action="/{{_id}}?_method=DELETE" method="POST">
            <input class="action-btn btn btn-danger" type="submit" value="Delete Album">
        </form>
     </div>
-    <p>{{album.artist.name}} - {{album.title}}</p>
+    <p>{{artist.[0].name}} - {{album.title}}</p>
     <ul>
         <li>Genre: {{album.genre}}</li>
         <li>Length: {{album.length}}</li>
         <li># of Songs: {{album.numSongs}}</li>
         <li>Released: {{album.releaseYear}}</li>
+        <li>Origin: {{album.artist.origin}}</li>
+        <li>Band Members: {{artist.[0].members}}</li>
     </ul>
-</div>
+    <p>{{album.reviews}}</p>
+    <form class="delete-form"action="/{{_id}}/reviews/{{_id}}?_method=DELETE" method="POST">
+        <input class="action-btn btn btn-danger" type="submit" value="Delete Review">
+    </form>
+    <a class="btn btn-primary" href="/{{_id}}/reviews/new">Add A Review</a>

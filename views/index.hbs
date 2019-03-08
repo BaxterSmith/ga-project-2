@@ -1,7 +1,5 @@
-<div class="container">
-    <a class="btn btn-info" href="/new">Add An Album</a>
-
-    <h2 class="text-center">Albums</h2>
+<a class="btn btn-primary" href="/new">Add An Album</a>
+<h2 class="text-center">Albums</h2>
 
     {{#each albums}}
         <div class="row review">
@@ -12,7 +10,7 @@
                 <div class="row">
                     <div class="col-sm-6">
                         <h4>
-                            <a href="/{{id}}">{{artist.name}} - {{title}}</a>
+                            <a href="/{{_id}}">{{artist.[0].name}} - {{title}}</a>
                         </h4>
                         {{releaseYear}}
                     </div>
@@ -23,4 +21,3 @@
             </div>
         </div>
     {{/each}}
-</div>
