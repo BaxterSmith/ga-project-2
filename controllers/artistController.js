@@ -26,3 +26,5 @@ const artistController = {
         });
     }
 };
+
+module.exports = artistController;

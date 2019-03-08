@@ -1,21 +1,35 @@
 const Album = require('../models/Album.js');
+const Artist = require('../models/Artist.js');
+const Review = require('../models/Review.js');
 
 const albumController = {
     index: (req, res) => {
-        Album.find().then(albums => {
-            res.render('index', {albums})
+        Artist.findById(req.params.artistId).then(artist => {
+            console.log('artist: ', artist)
+            console.log(req.params.artistId)
+            let artistId = req.params.artistId
+            Album.find().then(albums => {
+                res.render('index', {albums, artist, artistId})
+            })
         });
     },
     new: (req, res) => {
         res.render('new');
     },
     create: (req, res) => {
-        Album.create(req.body).then(album => {
-            res.redirect('/')
-        });
+        // first create the artist
+        Artist.create({
+            name: req.body.artistName
+        }).then(artist => {
+            Album.create(req.body).then(album => {
+                album.artist.push(artist)
+                album.save()
+                res.redirect('/')
+            });
+        })
     },
     show: (req, res) => {
-        let albumId = req.params;
+        let albumId = req.params.albumId;
         Album.findById(albumId).then(album => {
             res.render('show', {album, albumId})
         });
