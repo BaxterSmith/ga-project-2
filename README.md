@@ -8,6 +8,7 @@ This project is a full-stack application that permits users to view, add, update
 ### Wireframe
 
 https://github.com/BaxterSmith/ga-project-2/blob/master/vinyl-xanadu-wireframe.JPG
+
 https://github.com/BaxterSmith/ga-project-2/blob/master/show-page-wireframe.JPG
 
 ### ERD (Entity Relationship Diagram)
