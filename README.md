@@ -32,6 +32,8 @@ Express
 
 MongoDB
 
+Mongoose
+
 Bootstrap
 
 ### Link to Project on Heroku
