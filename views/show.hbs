@@ -3,8 +3,8 @@
         <img src="{{album.imgLink}}" alt="album art">
     </div>
     <div class="text-center">
-        <a class="btn btn-primary" href="/{{_id}}/edit">Edit Album</a>
-        <form class="delete-form"action="/{{_id}}?_method=DELETE" method="POST">
+        <a class="btn btn-primary" href="/{{album._id}}/edit">Edit Album</a>
+        <form class="delete-form" action="/{{album._id}}?_method=DELETE" method="POST">
            <input class="action-btn btn btn-danger" type="submit" value="Delete Album">
        </form>
     </div>
