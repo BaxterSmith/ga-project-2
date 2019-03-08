@@ -5,9 +5,7 @@ const Review = require('../models/Review.js');
 const albumController = {
     index: (req, res) => {
         Artist.findById(req.params.artistId).then(artist => {
-            console.log('artist: ', artist)
-            console.log(req.params.artistId)
-            let artistId = req.params.artistId
+            let artistId = req.params.artistId;
             Album.find().then(albums => {
                 res.render('index', {albums, artist, artistId})
             })
