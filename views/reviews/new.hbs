@@ -1,0 +1,15 @@
+<form action"/{{album.[0]._id}}" method="POST">
+    <div>
+        <label for="reviewer">Reviewer Name</label>
+        <input type="text" name="reviewer" id="reviewer">
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="number" min="1" max="5" name="rating" id="rating" value="{{review.rating}}">
+    </div>
+    <div>
+        <label for="reviewText">Review Text</label>
+        <textarea name="reviewText" id="reviewText" cols="30" rows="10"></textarea>
+    </div>
+    <input class="btn btn-primary" type="submit" value="Add Review">
+</form>
