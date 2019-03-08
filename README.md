@@ -43,4 +43,5 @@ https://morning-thicket-52864.herokuapp.com/
 ### What I Hope to Add in Phase 2
 
 > Track list for albums
+
 > Sound samples of songs on the albums
