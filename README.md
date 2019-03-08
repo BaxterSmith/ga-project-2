@@ -20,13 +20,13 @@ https://trello.com/b/XN1H6cEa/general-assembly-project-2
 
 ### Technologies Used
 
-> HTML5
-> CSS
-> JavaScript
-> Node.js
-> Express
-> MongoDB
-> Bootstrap
+HTML5
+CSS
+JavaScript
+Node.js
+Express
+MongoDB
+Bootstrap
 
 ### Link to Project on Heroku
 
